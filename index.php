@@ -283,9 +283,6 @@ data-bs-target="#menu">
 
 </button>
 
-
-
-
 <div class="collapse navbar-collapse"
 id="menu">
 
@@ -397,8 +394,8 @@ Login
 
 <div class="col-lg-6 text-center">
 
-<img src="assets/img/mockup.png"
-class="hero-img">
+<img src="assets/gambar/mockup.jpg"
+class="hero-gambar">
 
 </div>
 
@@ -540,7 +537,7 @@ id="tentang">
 
 <div class="col-lg-6 mb-4">
 
-<img src="assets/img/about.png"
+<img src="assets/gambar/sistem.jpg"
 class="img-fluid">
 
 </div>

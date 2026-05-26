@@ -29,28 +29,146 @@ href="../assets/css/style.css">
 
 <style>
 
+body{
+    background: #f5f7fb;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* MAIN */
+
+.main{
+    max-width: 1400px;
+    margin: auto;
+    padding: 35px;
+}
+
+/* HEADER */
+
+.page-header{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.page-title h3{
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+    margin-bottom: 6px;
+}
+
+.page-title p{
+
+    color: #64748b;
+
+    margin: 0;
+
+    font-size: 15px;
+}
+
+/* BUTTON */
+
+.btn-primary{
+
+    background:
+    linear-gradient(135deg,#4f8cff,#74a7ff);
+
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 12px 22px;
+
+    font-weight: 500;
+}
+
+.btn-primary:hover{
+    opacity: 0.95;
+}
+
+/* CARD */
+
+.progress-card{
+
+    background: white;
+
+    border-radius: 30px;
+
+    padding: 30px;
+
+    box-shadow:
+    0 10px 35px rgba(15,23,42,0.06);
+}
+
+/* TABLE */
+
+.table{
+    margin-bottom: 0;
+}
+
+.table thead th{
+
+    background: #f8fbff;
+
+    color: #4f8cff;
+
+    border: none;
+
+    padding: 18px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.table tbody td{
+
+    padding: 20px 18px;
+
+    vertical-align: middle;
+
+    border-color: #eef2ff;
+}
+
+/* FOTO */
+
 .foto-laporan{
+
     width: 100px;
     height: 80px;
 
     object-fit: cover;
 
     border-radius: 16px;
-}
-
-.progress-card{
-    background: white;
-    border-radius: 28px;
-    padding: 28px;
 
     box-shadow:
-    0 10px 35px rgba(15,23,42,0.06);
+    0 5px 15px rgba(0,0,0,0.08);
 }
 
+/* STATUS */
+
 .status-box{
+
     padding: 10px 16px;
+
     border-radius: 12px;
-    font-weight: 500;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    display: inline-block;
 }
 
 .status-menunggu{
@@ -68,24 +186,44 @@ href="../assets/css/style.css">
     color: #16a34a;
 }
 
+/* RESPONSIVE */
+
+@media(max-width:991px){
+
+    .main{
+        padding: 20px;
+    }
+
+    .progress-card{
+        padding: 22px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .page-title h3{
+        font-size: 26px;
+    }
+
+    .table thead th,
+    .table tbody td{
+        padding: 15px;
+    }
+
+}
+
 </style>
 
-</head>
 <body>
-
-<!-- SIDEBAR -->
-
-<?php include 'sidebar.php'; ?>
-
-<!-- MAIN -->
 
 <div class="main">
 
 <!-- HEADER -->
 
-<div class="header">
+<div class="page-header">
 
-<div class="header-title">
+<div class="page-title">
 
 <h3>
 Progress Laporan
@@ -97,44 +235,47 @@ Pantau perkembangan laporan parkir liar Anda
 
 </div>
 
-<div class="header-profile">
-
-<img src="../assets/img/user.png"
-class="profile-img">
-
-<div>
-
-<div class="profile-name">
-<?= $_SESSION['nama'] ?>
-</div>
-
-<small class="text-muted">
-User
-</small>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- CONTENT -->
-
-<div class="progress-card">
-
-<div class="d-flex justify-content-between align-items-center mb-4">
-
-<h4 class="fw-bold">
-Daftar Progress Laporan
-</h4>
+<div class="d-flex gap-2 flex-wrap">
 
 <a href="tambah_laporan.php"
 class="btn btn-primary">
 
-<i class="bi bi-plus-circle"></i>
+<i class="bi bi-plus-circle me-2"></i>
 Tambah Laporan
 
 </a>
+
+<a href="dashboard.php"
+class="btn btn-outline-primary">
+
+<i class="bi bi-arrow-left me-2"></i>
+Kembali Dashboard
+
+</a>
+
+</div>
+
+</a>
+
+</div>
+
+<!-- CARD -->
+
+<div class="progress-card">
+
+<div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+
+<div>
+
+<h4 class="fw-bold mb-1">
+Daftar Progress Laporan
+</h4>
+
+<p class="text-muted mb-0">
+Data progress laporan parkir liar terbaru
+</p>
+
+</div>
 
 </div>
 
@@ -148,7 +289,7 @@ Tambah Laporan
 
 <th>No</th>
 <th>Foto</th>
-<th>Lokasi</th>
+<th>Lokasi & Deskripsi</th>
 <th>Status</th>
 <th>Tanggal</th>
 
@@ -166,23 +307,27 @@ while($d=mysqli_fetch_array($data)){
 
 <tr>
 
-<td><?= $no++ ?></td>
+<td class="fw-semibold">
+<?= $no++ ?>
+</td>
 
 <td>
 
-<img src="../assets/upload/<?= $d['foto'] ?>"
+<img src="../assets/gambar/<?= $d['foto'] ?>"
 class="foto-laporan">
 
 </td>
 
 <td>
 
-<div class="fw-semibold">
+<div class="fw-semibold text-dark mb-1">
 <?= $d['lokasi'] ?>
 </div>
 
 <small class="text-muted">
-<?= substr($d['deskripsi'],0,50) ?>...
+
+<?= substr($d['deskripsi'],0,55) ?>...
+
 </small>
 
 </td>
@@ -195,6 +340,7 @@ if($d['status']=='Menunggu'){
 
 echo '
 <span class="status-box status-menunggu">
+<i class="bi bi-clock-history me-1"></i>
 Menunggu
 </span>';
 
@@ -202,6 +348,7 @@ Menunggu
 
 echo '
 <span class="status-box status-diproses">
+<i class="bi bi-arrow-repeat me-1"></i>
 Diproses
 </span>';
 
@@ -209,6 +356,7 @@ Diproses
 
 echo '
 <span class="status-box status-selesai">
+<i class="bi bi-check-circle me-1"></i>
 Selesai
 </span>';
 
@@ -218,7 +366,7 @@ Selesai
 
 </td>
 
-<td>
+<td class="text-muted">
 
 <?= date('d M Y',
 strtotime($d['tanggal'])) ?>
@@ -239,7 +387,4 @@ strtotime($d['tanggal'])) ?>
 
 </div>
 
-<script src="../assets/js/script.js"></script>
-
 </body>
-</html>

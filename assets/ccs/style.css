@@ -191,11 +191,14 @@ body{
 
 .main{
 
-    margin-left: 280px;
+    margin-left: 290px;
 
-    padding: 30px;
+    padding: 35px;
 
     min-height: 100vh;
+
+    max-width: calc(100% - 290px);
+
 }
 
 /* =========================

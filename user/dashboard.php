@@ -27,17 +27,11 @@ AND status='Selesai'"));
 
 <title>Dashboard User</title>
 
-<!-- Bootstrap -->
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 rel="stylesheet">
 
-<!-- Bootstrap Icons -->
-
 <link rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-<!-- Style -->
 
 <link rel="stylesheet"
 href="../assets/css/style.css">
@@ -46,18 +40,96 @@ href="../assets/css/style.css">
 
 body{
     background: #f5f7fb;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* HEADER */
+/* MAIN */
+
+.main{
+    max-width: 1450px;
+    margin: auto;
+    padding: 35px;
+}
+
+/* MENU */
+
+.menu-card{
+    background: white;
+    border-radius: 28px;
+    padding: 25px;
+    margin-bottom: 30px;
+
+    box-shadow:
+    0 10px 35px rgba(15,23,42,0.06);
+}
+
+.menu-item{
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    background: #f8fbff;
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    transition: 0.3s;
+
+    height: 100%;
+}
+
+.menu-item:hover{
+    transform: translateY(-5px);
+    background: #4f8cff;
+    color: white;
+}
+
+.menu-icon{
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+    linear-gradient(135deg,#4f8cff,#74a7ff);
+
+    color: white;
+
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+.menu-title{
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.menu-item:hover .menu-title{
+    color: white;
+}
+
+/* WELCOME */
 
 .welcome-banner{
 
     background:
     linear-gradient(135deg,#4f8cff,#74a7ff);
 
-    border-radius: 30px;
+    border-radius: 32px;
 
-    padding: 40px;
+    padding: 45px;
 
     color: white;
 
@@ -66,6 +138,9 @@ body{
     position: relative;
 
     margin-bottom: 35px;
+
+    box-shadow:
+    0 15px 40px rgba(79,140,255,0.18);
 }
 
 .welcome-banner::before{
@@ -74,25 +149,62 @@ body{
 
     position: absolute;
 
-    width: 300px;
-    height: 300px;
+    width: 320px;
+    height: 320px;
 
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.08);
 
     border-radius: 50%;
 
-    top: -100px;
-    right: -100px;
-
+    top: -120px;
+    right: -120px;
 }
 
 .welcome-title{
-    font-size: 35px;
+
+    font-size: 38px;
+
     font-weight: 700;
+
+    line-height: 1.3;
 }
 
 .welcome-text{
-    opacity: 0.9;
+
+    opacity: 0.92;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    max-width: 600px;
+}
+
+/* BUTTON */
+
+.btn-light{
+
+    border-radius: 14px;
+
+    padding: 12px 22px;
+
+    font-weight: 600;
+
+    border: none;
+}
+
+.btn-primary{
+
+    background:
+    linear-gradient(135deg,#4f8cff,#74a7ff);
+
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 12px 22px;
+
+    font-weight: 500;
 }
 
 /* CARD */
@@ -114,21 +226,24 @@ body{
 }
 
 .stat-card:hover{
-    transform: translateY(-6px);
+    transform: translateY(-5px);
 }
+
+/* ICON */
 
 .icon-stat{
 
-    width: 70px;
-    height: 70px;
+    width: 72px;
+    height: 72px;
 
-    border-radius: 20px;
+    border-radius: 22px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     font-size: 30px;
+
     color: white;
 }
 
@@ -147,18 +262,27 @@ body{
     linear-gradient(135deg,#10b981,#34d399);
 }
 
+/* TEXT */
+
 .stat-title{
+
     color: #94a3b8;
+
     margin-bottom: 10px;
+
+    font-size: 15px;
 }
 
 .stat-value{
-    font-size: 34px;
+
+    font-size: 36px;
+
     font-weight: 700;
+
     color: #0f172a;
 }
 
-/* TABLE */
+/* TABLE CARD */
 
 .table-card{
 
@@ -166,10 +290,18 @@ body{
 
     border-radius: 30px;
 
-    padding: 30px;
+    padding: 32px;
+
+    margin-top: 10px;
 
     box-shadow:
     0 10px 35px rgba(15,23,42,0.06);
+}
+
+/* TABLE */
+
+.table{
+    margin-bottom: 0;
 }
 
 .table thead th{
@@ -180,24 +312,32 @@ body{
 
     color: #4f8cff;
 
-    padding: 18px;
+    padding: 20px;
+
+    font-size: 14px;
+
+    font-weight: 600;
 }
 
 .table tbody td{
-    padding: 18px;
+
+    padding: 22px 20px;
+
     vertical-align: middle;
+
+    border-color: #eef2ff;
 }
 
 /* FOTO */
 
 .foto-laporan{
 
-    width: 85px;
-    height: 70px;
+    width: 90px;
+    height: 75px;
 
     object-fit: cover;
 
-    border-radius: 16px;
+    border-radius: 18px;
 
     box-shadow:
     0 5px 15px rgba(0,0,0,0.08);
@@ -207,19 +347,41 @@ body{
 
 .badge{
 
-    padding: 10px 15px;
+    padding: 10px 16px;
 
     border-radius: 12px;
 
     font-weight: 500;
+
+    font-size: 13px;
 }
 
 /* RESPONSIVE */
 
-@media(max-width:768px){
+@media(max-width:991px){
+
+    .main{
+        padding: 20px;
+    }
+
+    .welcome-banner{
+        padding: 30px;
+    }
 
     .welcome-title{
-        font-size: 28px;
+        font-size: 30px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .table-card{
+        padding: 20px;
+    }
+
+    .welcome-title{
+        font-size: 26px;
     }
 
 }
@@ -229,17 +391,68 @@ body{
 </head>
 <body>
 
-<!-- SIDEBAR -->
-
-<?php include 'sidebar.php'; ?>
-
-<!-- MAIN -->
-
 <div class="main">
 
-<!-- HEADER -->
+<!-- MENU -->
 
-<?php include 'header.php'; ?>
+<div class="menu-card">
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<a href="tambah_laporan.php"
+class="menu-item">
+
+<div class="menu-icon">
+<i class="bi bi-plus-circle"></i>
+</div>
+
+<div class="menu-title">
+Tambah Laporan
+</div>
+
+</a>
+
+</div>
+
+<div class="col-md-4">
+
+<a href="progress.php"
+class="menu-item">
+
+<div class="menu-icon">
+<i class="bi bi-clock-history"></i>
+</div>
+
+<div class="menu-title">
+Progress Laporan
+</div>
+
+</a>
+
+</div>
+
+<div class="col-md-4">
+
+<a href="peta.php"
+class="menu-item">
+
+<div class="menu-icon">
+<i class="bi bi-geo-alt"></i>
+</div>
+
+<div class="menu-title">
+Peta Laporan
+</div>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
 
 <!-- WELCOME -->
 
@@ -275,10 +488,6 @@ Tambah Laporan
 </div>
 
 <div class="col-md-4 text-center">
-
-<img src="../assets/img/dashboard-user.png"
-class="img-fluid"
-style="max-height:220px;">
 
 </div>
 
@@ -449,7 +658,7 @@ while($d=mysqli_fetch_array($data)){
 
 <td>
 
-<img src="../assets/upload/<?= $d['foto'] ?>"
+<img src="../assets/gambar/<?= $d['foto'] ?>"
 class="foto-laporan">
 
 </td>
@@ -517,8 +726,6 @@ strtotime($d['tanggal'])) ?>
 </div>
 
 </div>
-
-<script src="../assets/js/script.js"></script>
 
 </body>
 </html>

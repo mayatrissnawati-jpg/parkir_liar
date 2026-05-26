@@ -50,10 +50,6 @@ href="../assets/css/style.css">
 </head>
 <body>
 
-<!-- SIDEBAR -->
-
-<?php include 'sidebar.php'; ?>
-
 <!-- MAIN -->
 
 <div class="main">
@@ -99,7 +95,7 @@ Kembali
 
 <div class="position-relative">
 
-<img src="../assets/upload/<?= $d['foto'] ?>"
+<img src="../assets/gambar/<?= $d['foto'] ?>"
 class="img-fluid rounded-4 shadow-sm w-100"
 style="height:420px; object-fit:cover;">
 
