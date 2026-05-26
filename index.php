@@ -650,4 +650,3 @@ Sistem Pelaporan Parkir Liar
 <script src="assets/js/script.js"></script>
 
 </body>
-</html>

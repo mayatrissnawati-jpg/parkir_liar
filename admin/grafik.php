@@ -504,4 +504,3 @@ new Chart(ctx, {
 </script>
 
 </body>
-</html>

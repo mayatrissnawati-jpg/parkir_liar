@@ -57,5 +57,3 @@ Logout
 </li>
 
 </ul>
-
-</div>

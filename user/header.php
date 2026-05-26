@@ -34,5 +34,3 @@ class="profile-img">
 </div>
 
 </div>
-
-</div>

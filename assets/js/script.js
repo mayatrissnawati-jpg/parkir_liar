@@ -127,5 +127,4 @@ function togglePassword(id,icon){
         icon.classList.add('bi-eye-slash');
 
     }
-
 }

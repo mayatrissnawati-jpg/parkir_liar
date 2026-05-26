@@ -728,4 +728,3 @@ strtotime($d['tanggal'])) ?>
 </div>
 
 </body>
-</html>

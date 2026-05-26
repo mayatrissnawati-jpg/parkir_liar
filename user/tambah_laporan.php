@@ -210,4 +210,3 @@ if(navigator.geolocation){
 </script>
 
 </body>
-</html>
