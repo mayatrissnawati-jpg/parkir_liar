@@ -30,10 +30,6 @@ href="../assets/css/style.css">
 </head>
 <body>
 
-<!-- SIDEBAR -->
-
-<?php include 'sidebar.php'; ?>
-
 <!-- MAIN -->
 
 <div class="main">

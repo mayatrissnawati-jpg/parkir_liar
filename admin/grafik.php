@@ -89,8 +89,6 @@ body{
 </head>
 <body>
 
-<?php include 'sidebar.php'; ?>
-
 <div class="main">
 
 <!-- HEADER -->
